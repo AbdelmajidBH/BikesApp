@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import org.apache.commons.logging.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -39,6 +40,16 @@ public class BikeServiceImpl implements BikeService {
 
 	@Override
 	public Bike updateBike(Bike bike) {
+		/**
+		 * 
+		 * 
+		 * @author A Bahmed
+		 * @param id of bike  
+		 */
+		if(bikeRepository.exists(bike.getId())) {
+		System.out.println("c 'est une modification !!");
+		}
+		
 		return bikeRepository.save(bike);
 	}
 

@@ -43,5 +43,5 @@ dependencies {
     
      //Spring Session 
      
-     compile('org.springframework.session:spring-session-core:2.0.1.RELEASE')
+     //compile('org.springframework.session:spring-session-core:2.0.1.RELEASE')
 }

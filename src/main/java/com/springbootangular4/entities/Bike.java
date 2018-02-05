@@ -1,9 +1,12 @@
 package com.springbootangular4.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+import org.hibernate.annotations.Type;
 
 @Entity
 public class Bike {
@@ -13,6 +16,10 @@ public class Bike {
 	private Integer id;
 	private String model;
 	private String manufacturer;
+
+	// @Column(name = "is_active", nullable = false)
+	// @Type(type = "org.hibernate.type.NumericBooleanType")
+	// private Boolean etat;
 
 	public Bike() {
 
