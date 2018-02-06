@@ -1,12 +1,12 @@
 package com.springbootangular4.controllers;
 
-import java.text.DateFormat;
+
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -25,18 +25,18 @@ public class ProductController {
 		this.productService = productService;
 	}
 
-	@RequestMapping(value = "/allProducts", method = RequestMethod.GET)
+	@GetMapping(value = "/allProducts")
 	public List<Product> getAllBikes() {
 
 		return productService.getAllProducts();
 	}
 
-	@RequestMapping(value = "/getProduct/{productId}", method = RequestMethod.GET)
+	@GetMapping(value = "/getProduct/{productId}")
 	public Product getProduct(@PathVariable("productId") Integer productId) {
 		return productService.getProduct(productId);
 	}
 
-	@RequestMapping(value = "/createProduct", method = RequestMethod.POST)
+	@PostMapping(value = "/createProduct")
 	public Product createProduct(@RequestBody Product product) throws ParseException {
 		//DateFormat parser = new SimpleDateFormat("dd MMM yyyy");
 		//Date date = parser.parse(product.getReleaseDate().toString());
